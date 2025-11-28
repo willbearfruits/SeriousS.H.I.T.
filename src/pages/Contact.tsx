@@ -4,53 +4,66 @@ import Layout from '../components/Layout';
 const Contact: React.FC = () => {
   return (
     <Layout>
-      <h1 className="text-3xl mb-8">Contact</h1>
-      <p className="text-lg mb-8">Got a question? Found a bug in the reality matrix? Want to collaborate?</p>
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-5xl font-black mb-12 text-center glitch-text" data-text="TRANSMISSION">TRANSMISSION</h1>
+        
+        <div className="border border-neon-red/50 bg-black/50 p-8 md:p-12 backdrop-blur-sm relative">
+            {/* Decoration corners */}
+            <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-neon-red"></div>
+            <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-neon-red"></div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <form 
-            className="space-y-6" 
-            onSubmit={(e) => { 
-                e.preventDefault(); 
-                alert('Transmission Failed: Static Site Mode. Please use email.'); 
-            }}
-        >
-            <div className="flex flex-col gap-2">
-                <label htmlFor="name" className="text-shit-red font-bold uppercase text-sm">Name / Alias</label>
-                <input type="text" id="name" className="bg-[#111] border border-shit-dim p-3 text-white focus:border-shit-red outline-none transition-colors" required />
-            </div>
-
-            <div className="flex flex-col gap-2">
-                <label htmlFor="email" className="text-shit-red font-bold uppercase text-sm">Email</label>
-                <input type="email" id="email" className="bg-[#111] border border-shit-dim p-3 text-white focus:border-shit-red outline-none transition-colors" required />
-            </div>
-
-            <div className="flex flex-col gap-2">
-                <label htmlFor="message" className="text-shit-red font-bold uppercase text-sm">Transmission</label>
-                <textarea id="message" rows={6} className="bg-[#111] border border-shit-dim p-3 text-white focus:border-shit-red outline-none transition-colors resize-y" required></textarea>
-            </div>
-
-            <button type="submit" className="btn w-full">Send Transmission</button>
-        </form>
-
-        <div className="border-t md:border-t-0 md:border-l border-shit-dim pt-8 md:pt-0 md:pl-8">
-            <h3 className="text-xl mb-6 text-white">Direct Line</h3>
-            
-            <div className="space-y-4">
+            <form 
+                className="space-y-8"
+                onSubmit={(e) => { 
+                    e.preventDefault(); 
+                    alert('ERROR: STATIC REALITY. USE EMAIL.'); 
+                }}
+            >
                 <div>
-                    <div className="text-xs text-shit-dim uppercase tracking-widest mb-1">Email</div>
-                    <a href="mailto:contact@shitisizers.com" className="text-lg hover:text-shit-red">contact@shitisizers.com</a>
-                </div>
-                
-                <div>
-                    <div className="text-xs text-shit-dim uppercase tracking-widest mb-1">GitHub</div>
-                    <a href="https://github.com/willbearfruits" target="_blank" rel="noreferrer" className="text-lg hover:text-shit-red">willbearfruits</a>
+                    <label className="block text-neon-red font-bold text-sm tracking-widest mb-2">IDENTITY</label>
+                    <input 
+                        type="text" 
+                        className="w-full bg-void border-b-2 border-gray-800 p-4 text-white focus:border-neon-red focus:bg-neon-red/5 outline-none transition-all font-mono"
+                        placeholder="Name / Alias"
+                    />
                 </div>
 
                 <div>
-                    <div className="text-xs text-shit-dim uppercase tracking-widest mb-1">Location</div>
-                    <div className="text-lg">The Void (Home Studio)</div>
+                    <label className="block text-neon-red font-bold text-sm tracking-widest mb-2">FREQUENCY</label>
+                    <input 
+                        type="email" 
+                        className="w-full bg-void border-b-2 border-gray-800 p-4 text-white focus:border-neon-red focus:bg-neon-red/5 outline-none transition-all font-mono"
+                        placeholder="Email Address"
+                    />
                 </div>
+
+                <div>
+                    <label className="block text-neon-red font-bold text-sm tracking-widest mb-2">PAYLOAD</label>
+                    <textarea 
+                        rows={5}
+                        className="w-full bg-void border-2 border-gray-800 p-4 text-white focus:border-neon-red focus:bg-neon-red/5 outline-none transition-all font-mono"
+                        placeholder="Enter message..."
+                    ></textarea>
+                </div>
+
+                <button type="submit" className="btn-obscene w-full">
+                    SEND SIGNAL
+                </button>
+            </form>
+        </div>
+
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 text-center font-mono text-sm">
+            <div className="border border-gray-800 p-6 hover:border-neon-red transition-colors">
+                <div className="text-gray-500 mb-2">DIRECT LINE</div>
+                <a href="mailto:contact@shitisizers.com" className="text-xl text-off-white hover:text-neon-red">
+                    contact@shitisizers.com
+                </a>
+            </div>
+            <div className="border border-gray-800 p-6 hover:border-neon-red transition-colors">
+                <div className="text-gray-500 mb-2">SOURCE CODE</div>
+                <a href="https://github.com/willbearfruits" className="text-xl text-off-white hover:text-neon-red">
+                    github.com/willbearfruits
+                </a>
             </div>
         </div>
       </div>
