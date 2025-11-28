@@ -15,7 +15,8 @@ export const instruments = [
     ],
     image: 'images/instruments/fuzilator.jpg',
     video: 'https://www.youtube.com/embed/hmRgam2-x0o',
-    status: 'Limited Stock'
+    status: 'Limited Stock',
+    link: 'https://www.shitisizers.com/the-fuzilator-puke-machine.html'
   },
   {
     id: 'sus-my-bitx',
@@ -30,7 +31,8 @@ export const instruments = [
       'True Bypass'
     ],
     image: 'images/instruments/sus-my-bitx.jpg',
-    status: 'Out of Stock'
+    status: 'Out of Stock',
+    link: ''
   },
   {
     id: 'pain-killers',
@@ -44,7 +46,8 @@ export const instruments = [
       'Noise Generator'
     ],
     image: 'images/instruments/pain-killers.jpg',
-    status: 'Archived'
+    status: 'Archived',
+    link: ''
   },
   {
     id: 'karplus-strong-machine',
@@ -88,7 +91,8 @@ export const works = [
     type: 'Installation',
     image: '',
     description: 'Exhibited at Benyamin Gallery ("SETTINGS"). A fictional "farm" generating creatures from white noise. Surreal pseudo-archive of family albums and hybrids.',
-    video: ''
+    video: '',
+    link: 'https://www.binyamin-gallery.com/en/exhibition/settings'
   },
   {
     id: 'wrong-wave',
@@ -138,7 +142,7 @@ export const collaborations = [
     title: 'Parve',
     role: 'Guitar & Programming',
     description: 'Noise/industrial band with Tomer Damsky. Album: "Decktor" (2015). Sound between curiosity, nausea, and interest.',
-    link: 'https://www.qube.co.il/%D7%A4%D7%A8%D7%95%D7%95%D7%94'
+    link: 'http://parvemusic.weebly.com/'
   },
   {
     id: 'kill-all-unicorns',
@@ -160,6 +164,13 @@ export const collaborations = [
     role: 'Collaboration',
     description: 'With Daniel Landau. Media/performance art.',
     link: ''
+  },
+  {
+    id: 'musica-nova',
+    title: 'Musica Nova',
+    role: 'Improvisation',
+    description: 'Ensemble Musica Nova @ Mezzo Gallery, Haifa. Experimental improvisation.',
+    link: 'https://www.musicanova.co.il/items/novaparallel8'
   }
 ];
 
@@ -192,7 +203,8 @@ export const music = [
     title: 'Black Label',
     year: 'Commission',
     description: 'Original music for solo dance performance by Tzvika Hizikyas. Performed at Dock11 (Berlin) and International Dance Week.',
-    video: ''
+    video: '',
+    link: 'https://tickchak.co.il/5728'
   },
   {
     title: 'Elevator',
