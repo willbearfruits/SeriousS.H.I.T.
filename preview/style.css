@@ -1,5 +1,5 @@
 :root {
-    --bg-color: #050505;
+    --bg-color: #0a0000; /* Very dark red/black */
     --text-color: #e0e0e0;
     --accent-color: #ff0033; /* High-vis red */
     --dim-color: #444;
@@ -44,12 +44,15 @@ header {
 }
 
 .logo {
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: var(--accent-color);
-    border: 2px solid var(--accent-color);
-    padding: 5px 10px;
+    display: block;
+    max-width: 100px;
     transform: rotate(-2deg);
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 nav ul {
