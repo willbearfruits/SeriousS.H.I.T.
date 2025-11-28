@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-shit-black text-shit-text font-mono;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply uppercase font-bold text-shit-red;
+}
+
+a {
+  @apply transition-colors duration-200;
+}
+
+a:hover {
+  @apply text-shit-red underline;
+}
+
+.btn {
+  @apply inline-block border border-shit-red text-shit-red px-5 py-2 uppercase font-bold hover:bg-shit-red hover:text-shit-black transition-all;
+}
