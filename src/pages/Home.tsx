@@ -1,14 +1,17 @@
 import React from 'react';
 import Layout from '../components/Layout';
+import AcronymGenerator from '../components/AcronymGenerator';
+import KonamiCode from '../components/KonamiCode';
 import { Link } from 'react-router-dom';
 import { instruments } from '../data/content';
 
 const Home: React.FC = () => {
   return (
     <Layout>
+      <KonamiCode />
       <div className="flex flex-col items-center justify-center min-h-[60vh]">
         <div className="w-full max-w-4xl text-center mb-16">
-            <h1 className="text-4xl md:text-7xl font-black text-neon-red mb-4 glitch-text" data-text="SERIOUS S.H.I.T.">
+            <h1 className="text-4xl md:text-7xl font-black text-neon-red mb-4 glitch-text hover:scale-105 transition-transform" data-text="SERIOUS S.H.I.T.">
                 SERIOUS S.H.I.T.
             </h1>
             <h2 className="text-xl md:text-2xl tracking-widest text-gray-400 font-mono mb-8">
@@ -51,6 +54,11 @@ const Home: React.FC = () => {
             </Link>
         </div>
 
+        <div className="w-full max-w-4xl relative mb-20">
+            <div className="absolute -inset-1 bg-neon-red opacity-20 blur-2xl animate-pulse"></div>
+            <AcronymGenerator />
+        </div>
+
         {/* Latest */}
         <div className="w-full max-w-6xl border-t border-neon-red/20 pt-12">
             <h3 className="text-xl font-black text-neon-red mb-8 uppercase tracking-widest flex items-center">
@@ -58,10 +66,10 @@ const Home: React.FC = () => {
                 Latest Transmissions
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="aspect-video bg-black border border-gray-800">
+                <div className="aspect-video bg-black border border-gray-800 hover:border-neon-red transition-colors">
                     <iframe src="https://www.youtube.com/embed/hmRgam2-x0o" className="w-full h-full" allowFullScreen title="Latest 1"></iframe>
                 </div>
-                <div className="aspect-video bg-black border border-gray-800">
+                <div className="aspect-video bg-black border border-gray-800 hover:border-neon-red transition-colors">
                     <iframe src="https://www.youtube.com/embed/vEsWCcictmQ" className="w-full h-full" allowFullScreen title="Latest 2"></iframe>
                 </div>
             </div>

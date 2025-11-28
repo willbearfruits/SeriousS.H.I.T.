@@ -27,7 +27,11 @@ const About: React.FC = () => {
           </p>
 
           <p>
-            I'm building this as an open community project. I need help documenting builds, maintaining accessible resources, testing designs, and creating a knowledge base that actually serves people who want to make noise.
+            I also teach at the <strong>Musrara School of Art</strong>, focusing on technology-driven projects, new media art, and machine learning for creatives.
+          </p>
+
+          <p>
+            Beyond the lab, I play guitar for <strong>Parve</strong> and sometimes <strong>SEVEL</strong>.
           </p>
 
           <p className="text-xl font-bold text-off-white pt-8">

@@ -86,6 +86,22 @@ export const works = [
     image: '', 
     description: 'Abstract video work.',
     video: ''
+  },
+  {
+    id: 'cave-study',
+    title: 'Cave Study',
+    type: 'Collaboration',
+    image: '',
+    description: 'Collaboration with Daniel Landau.',
+    video: ''
+  },
+  {
+    id: 'parve',
+    title: 'Parve (Band)',
+    type: 'Music/Performance',
+    image: '',
+    description: 'Guitarist for the band Parve.',
+    video: ''
   }
 ];
 
@@ -94,18 +110,24 @@ export const music = [
     title: 'Oroboros',
     year: '2011',
     description: 'Cycle of noise and rebirth.',
-    video: 'https://www.youtube.com/embed/vEsWCcictmQ' // Placeholder using Hakol Beseder
+    video: 'https://www.youtube.com/embed/vEsWCcictmQ' 
   },
   {
     title: 'La-Nuit',
     year: '2011',
-    description: 'Nocturnal transmissions.',
+    description: 'Nocturnal transmissions. Songs like "Lu La Bee" and "Lucide".',
     video: ''
   },
   {
     title: 'Artificial Madne$',
     year: '2015',
     description: 'Generated chaos.',
+    video: ''
+  },
+  {
+    title: 'Happy-Dural',
+    year: 'Soundtrack',
+    description: 'Soundtrack work.',
     video: ''
   }
 ];

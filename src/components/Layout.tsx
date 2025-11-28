@@ -34,7 +34,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <img 
                     src={`${import.meta.env.BASE_URL}images/logo.png`} 
                     alt="S.H.I.T." 
-                    className="w-16 md:w-20 filter drop-shadow-[0_0_5px_rgba(255,0,0,0.5)] group-hover:sepia transition-all duration-100" 
+                    className="w-16 md:w-20 filter drop-shadow-[0_0_5px_rgba(255,0,0,0.5)] group-hover:sepia transition-all duration-100 hover:animate-pulse" 
                 />
                 <div className="hidden md:block font-mono text-xs text-gray-500">
                     <div>SERIOUS S.H.I.T.</div>
@@ -65,7 +65,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-            <div className="lg:hidden absolute top-full left-0 w-full bg-void border-b border-neon-red p-4 flex flex-col gap-4 font-mono font-bold">
+            <div className="lg:hidden absolute top-full left-0 w-full bg-void border-b border-neon-red p-4 flex flex-col gap-4 font-mono font-bold z-50">
                 <Link to="/" onClick={() => setMobileMenuOpen(false)} className="hover:text-neon-red">HOME</Link>
                 <Link to="/instruments" onClick={() => setMobileMenuOpen(false)} className="hover:text-neon-red">INSTRUMENTS</Link>
                 <Link to="/works" onClick={() => setMobileMenuOpen(false)} className="hover:text-neon-red">WORKS</Link>
@@ -89,9 +89,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div>OPEN SOURCE INSTRUMENTS, NOISE, AND ART</div>
         </div>
         <div className="flex justify-center gap-6 mt-6 text-gray-500 text-sm">
-            <a href="https://github.com/willbearfruits" target="_blank" className="hover:text-neon-red">GITHUB</a>
-            <a href="https://www.youtube.com/dogme666" target="_blank" className="hover:text-neon-red">YOUTUBE</a>
-            <a href="https://www.instagram.com/wilbear_fruits/" target="_blank" className="hover:text-neon-red">INSTAGRAM</a>
+            <a href="https://github.com/willbearfruits" target="_blank" className="hover:text-neon-red hover:animate-shake">GITHUB</a>
+            <a href="https://www.youtube.com/dogme666" target="_blank" className="hover:text-neon-red hover:animate-shake">YOUTUBE</a>
+            <a href="https://www.instagram.com/wilbear_fruits/" target="_blank" className="hover:text-neon-red hover:animate-shake">INSTAGRAM (ART)</a>
+            <a href="https://www.instagram.com/shitisizers/" target="_blank" className="hover:text-neon-red hover:animate-shake">INSTAGRAM (GEAR)</a>
+            <a href="https://facebook.com/yaniv.schonfeld" target="_blank" className="hover:text-neon-red hover:animate-shake">FACEBOOK</a>
         </div>
       </footer>
     </div>
