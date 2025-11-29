@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useOS } from '../../context/OSContext';
 
 const Taskbar: React.FC = () => {
-  const { windows, minimizeWindow, focusWindow, openWindow } = useOS();
+  const { windows, minimizeWindow, restoreWindow, openWindow } = useOS();
   const [startOpen, setStartOpen] = useState(false);
   const [time, setTime] = useState(new Date());
 
@@ -12,7 +12,7 @@ const Taskbar: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-0 left-0 w-full h-8 bg-win-gray win-border-out flex items-center px-1 z-[1000] select-none">
+    <div className="fixed bottom-0 left-0 w-full h-10 sm:h-8 bg-win-gray win-border-out flex items-center px-1 z-[1000] select-none">
       
       {/* Start Button */}
       <div className="relative">
@@ -25,7 +25,7 @@ const Taskbar: React.FC = () => {
         </button>
         
         {startOpen && (
-            <div className="absolute bottom-8 left-0 w-48 bg-win-gray win-border-out flex flex-col p-1 shadow-xl">
+            <div className="absolute bottom-10 sm:bottom-8 left-0 w-64 sm:w-48 bg-win-gray win-border-out flex flex-col p-1 shadow-xl">
                 <div className="bg-win-blue-light h-full w-6 absolute left-0 top-0 bottom-0 flex items-end justify-center pb-2">
                     <span className="transform -rotate-90 text-white font-bold tracking-widest text-lg whitespace-nowrap">SERIOUS 93</span>
                 </div>
@@ -51,15 +51,15 @@ const Taskbar: React.FC = () => {
       <div className="w-0.5 h-6 bg-gray-400 mx-2 border-l border-white border-r border-gray-600"></div>
 
       {/* Open Windows */}
-      <div className="flex-grow flex items-center gap-1 overflow-hidden px-1">
+      <div className="flex-grow flex items-center gap-1 overflow-x-auto px-1">
         {windows.map(win => (
             <button
                 key={win.id}
-                onClick={() => win.isMinimized ? focusWindow(win.id) : minimizeWindow(win.id)}
-                className={`h-6 px-2 max-w-[150px] flex items-center gap-1 text-xs font-ms-sans truncate ${win.isMinimized || false ? 'win-border-out' : 'win-border-in bg-gray-200 font-bold'}`}
+                onClick={() => win.isMinimized ? restoreWindow(win.id) : minimizeWindow(win.id)}
+                className={`h-6 sm:h-7 px-2 min-w-[80px] sm:max-w-[150px] flex items-center gap-1 text-xs font-ms-sans truncate ${win.isMinimized ? 'win-border-out' : 'win-border-in bg-gray-200 font-bold'}`}
             >
-                <img src="/vite.svg" className="w-3 h-3" />
-                {win.title}
+                <img src="/vite.svg" className="w-3 h-3 hidden sm:block" />
+                <span className="truncate">{win.title}</span>
             </button>
         ))}
       </div>

@@ -31,7 +31,7 @@ const Desktop: React.FC = () => {
   return (
     <div className="h-screen w-screen bg-win-bg relative overflow-hidden">
       {/* Desktop Icons Grid */}
-      <div className="p-4 grid grid-flow-col grid-rows-6 gap-4 w-max h-[calc(100vh-40px)]">
+      <div className="p-4 grid grid-cols-2 sm:grid-flow-col sm:grid-rows-6 gap-4 w-full sm:w-max h-[calc(100vh-40px)] overflow-y-auto sm:overflow-y-visible">
         <DesktopIcon 
             label="My Computer" 
             icon="https://win98icons.alexmeub.com/icons/png/computer_explorer-5.png" 
@@ -70,13 +70,14 @@ const Desktop: React.FC = () => {
 
       {/* Windows Layer */}
       {windows.map((win) => (
-        <WindowFrame 
-          key={win.id} 
-          id={win.id} 
-          title={win.title} 
+        <WindowFrame
+          key={win.id}
+          id={win.id}
+          title={win.title}
           zIndex={win.zIndex}
           isMinimized={win.isMinimized}
           isMaximized={win.isMaximized}
+          initialPos={win.position}
         >
             {/* Render Content Based on Type */}
             {win.type === 'TEXT' && (

@@ -18,6 +18,7 @@ interface OSContextType {
   openWindow: (title: string, type: AppType, content?: any) => void;
   closeWindow: (id: string) => void;
   minimizeWindow: (id: string) => void;
+  restoreWindow: (id: string) => void;
   maximizeWindow: (id: string) => void;
   focusWindow: (id: string) => void;
   isBooting: boolean;
@@ -52,21 +53,34 @@ export const OSProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   };
 
   const minimizeWindow = (id: string) => {
-    setWindows(windows.map(w => w.id === id ? { ...w, isMinimized: !w.isMinimized } : w));
+    setWindows(prevWindows =>
+      prevWindows.map(w => w.id === id ? { ...w, isMinimized: true } : w)
+    );
+  };
+
+  const restoreWindow = (id: string) => {
+    setWindows(prevWindows =>
+      prevWindows.map(w => w.id === id ? { ...w, isMinimized: false, zIndex: nextZIndex } : w)
+    );
+    setNextZIndex(prev => prev + 1);
   };
 
   const maximizeWindow = (id: string) => {
-    setWindows(windows.map(w => w.id === id ? { ...w, isMaximized: !w.isMaximized } : w));
+    setWindows(prevWindows =>
+      prevWindows.map(w => w.id === id ? { ...w, isMaximized: !w.isMaximized } : w)
+    );
     focusWindow(id);
   };
 
   const focusWindow = (id: string) => {
-    setWindows(windows.map(w => w.id === id ? { ...w, zIndex: nextZIndex } : w));
-    setNextZIndex(nextZIndex + 1);
+    setWindows(prevWindows =>
+      prevWindows.map(w => w.id === id ? { ...w, zIndex: nextZIndex } : w)
+    );
+    setNextZIndex(prev => prev + 1);
   };
 
   return (
-    <OSContext.Provider value={{ windows, openWindow, closeWindow, minimizeWindow, maximizeWindow, focusWindow, isBooting, setBooting: setIsBooting }}>
+    <OSContext.Provider value={{ windows, openWindow, closeWindow, minimizeWindow, restoreWindow, maximizeWindow, focusWindow, isBooting, setBooting: setIsBooting }}>
       {children}
     </OSContext.Provider>
   );

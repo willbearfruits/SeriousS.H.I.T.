@@ -18,14 +18,14 @@ const WindowFrame: React.FC<WindowFrameProps> = ({ id, title, zIndex, isMinimize
 
   if (isMinimized) return null;
 
-  const windowStyle = isMaximized 
-    ? "fixed top-0 left-0 w-full h-full m-0" 
-    : "absolute w-[600px] h-[400px]";
+  const windowStyle = isMaximized
+    ? "fixed top-0 left-0 w-full h-full m-0"
+    : "absolute w-full sm:w-[600px] h-[80vh] sm:h-[400px] max-w-full max-h-[calc(100vh-48px)]";
 
   return (
     <Draggable
       handle=".title-bar"
-      defaultPosition={initialPos || { x: 100, y: 100 }}
+      defaultPosition={initialPos || { x: 20, y: 20 }}
       nodeRef={nodeRef}
       disabled={isMaximized}
       onMouseDown={() => focusWindow(id)}
