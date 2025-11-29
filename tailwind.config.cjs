@@ -7,51 +7,25 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'void': '#000000',
-        'blood': '#8a0000',
-        'neon-red': '#ff0000',
-        'off-white': '#f0f0f0',
-        'overlay': 'rgba(255, 0, 0, 0.1)',
+        'win-gray': '#c0c0c0',
+        'win-gray-light': '#dfdfdf',
+        'win-gray-dark': '#808080',
+        'win-blue': '#000080',
+        'win-blue-light': '#1084d0',
+        'win-text': '#000000',
+        'win-bg': '#008080', // Classic teal
       },
       fontFamily: {
-        mono: ['"Courier New"', 'Courier', 'monospace'],
-        display: ['"Arial Black"', 'Impact', 'sans-serif'],
+        'pixel': ['"Pixelify Sans"', '"Courier New"', 'monospace'],
+        'ms-sans': ['"Microsoft Sans Serif"', 'Tahoma', 'sans-serif'],
       },
-      animation: {
-        'glitch-1': 'glitch-1 2.5s infinite linear alternate-reverse',
-        'glitch-2': 'glitch-2 3s infinite linear alternate-reverse',
-        'shake': 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
-        'pulse-fast': 'pulse 0.1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'float': 'float 6s ease-in-out infinite',
+      boxShadow: {
+        'win-out': 'inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px #808080, inset 2px 2px #ffffff',
+        'win-in': 'inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080',
       },
-      keyframes: {
-        'glitch-1': {
-          '0%': { clipPath: 'inset(20% 0 80% 0)' },
-          '20%': { clipPath: 'inset(60% 0 10% 0)' },
-          '40%': { clipPath: 'inset(40% 0 50% 0)' },
-          '60%': { clipPath: 'inset(80% 0 5% 0)' },
-          '80%': { clipPath: 'inset(10% 0 60% 0)' },
-          '100%': { clipPath: 'inset(30% 0 30% 0)' },
-        },
-        'glitch-2': {
-          '0%': { clipPath: 'inset(10% 0 60% 0)' },
-          '20%': { clipPath: 'inset(30% 0 20% 0)' },
-          '40%': { clipPath: 'inset(70% 0 10% 0)' },
-          '60%': { clipPath: 'inset(20% 0 50% 0)' },
-          '80%': { clipPath: 'inset(50% 0 30% 0)' },
-          '100%': { clipPath: 'inset(0% 0 80% 0)' },
-        },
-        shake: {
-          '10%, 90%': { transform: 'translate3d(-1px, 0, 0)' },
-          '20%, 80%': { transform: 'translate3d(2px, 0, 0)' },
-          '30%, 50%, 70%': { transform: 'translate3d(-4px, 0, 0)' },
-          '40%, 60%': { transform: 'translate3d(4px, 0, 0)' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-20px)' },
-        }
-      },
+      backgroundImage: {
+        'checker': 'linear-gradient(45deg, #808080 25%, transparent 25%), linear-gradient(-45deg, #808080 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #808080 75%), linear-gradient(-45deg, transparent 75%, #808080 75%)',
+      }
     },
   },
   plugins: [],
