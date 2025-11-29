@@ -16,11 +16,11 @@ const Taskbar: React.FC = () => {
       
       {/* Start Button */}
       <div className="relative">
-        <button 
+        <button
             className={`h-6 px-2 flex items-center gap-1 font-bold font-ms-sans text-sm ${startOpen ? 'win-border-in bg-gray-300' : 'win-border-out'}`}
             onClick={() => setStartOpen(!startOpen)}
         >
-            <img src="/vite.svg" className="w-4 h-4 grayscale" />
+            <img src={`${import.meta.env.BASE_URL}vite.svg`} className="w-4 h-4 grayscale" />
             S.H.I.T.
         </button>
         
@@ -58,7 +58,7 @@ const Taskbar: React.FC = () => {
                 onClick={() => win.isMinimized ? restoreWindow(win.id) : minimizeWindow(win.id)}
                 className={`h-6 sm:h-7 px-2 min-w-[80px] sm:max-w-[150px] flex items-center gap-1 text-xs font-ms-sans truncate ${win.isMinimized ? 'win-border-out' : 'win-border-in bg-gray-200 font-bold'}`}
             >
-                <img src="/vite.svg" className="w-3 h-3 hidden sm:block" />
+                <img src={`${import.meta.env.BASE_URL}vite.svg`} className="w-3 h-3 hidden sm:block" />
                 <span className="truncate">{win.title}</span>
             </button>
         ))}

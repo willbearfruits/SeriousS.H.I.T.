@@ -38,7 +38,7 @@ const WindowFrame: React.FC<WindowFrameProps> = ({ id, title, zIndex, isMinimize
         {/* Title Bar */}
         <div className="title-bar bg-win-blue flex justify-between items-center px-1 py-0.5 select-none cursor-default">
           <div className="flex items-center gap-2">
-            <img src="/vite.svg" className="w-4 h-4" alt="icon" />
+            <img src={`${import.meta.env.BASE_URL}vite.svg`} className="w-4 h-4" alt="icon" />
             <span className="text-white font-bold font-ms-sans text-sm truncate max-w-[200px]">{title}</span>
           </div>
           <div className="flex gap-1">
