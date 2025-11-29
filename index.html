@@ -2,14 +2,168 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/SeriousS.H.I.T./preview/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/v2/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Serious S.H.I.T. | Noise, Art & Instruments</title>
-    <meta name="description" content="Interdisciplinary artist, noise-maker, and teacher building open-source instruments, performances, and tools for breaking sound and images." />
-    <script type="module" crossorigin src="/SeriousS.H.I.T./preview/assets/index-DtSoW3ON.js"></script>
-    <link rel="stylesheet" crossorigin href="/SeriousS.H.I.T./preview/assets/index-BvIVRx8w.css">
+    <title>Serious S.H.I.T. | Choose Your Experience</title>
+    <meta name="description" content="Noise, Art & Instruments - Select your viewing experience" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Courier New', monospace;
+        background: #000;
+        color: #00ff00;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .scanline {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: repeating-linear-gradient(
+          0deg,
+          rgba(0, 255, 0, 0.05),
+          rgba(0, 255, 0, 0.05) 1px,
+          transparent 1px,
+          transparent 2px
+        );
+        pointer-events: none;
+        z-index: 1000;
+      }
+
+      .container {
+        text-align: center;
+        padding: 2rem;
+        max-width: 800px;
+        border: 2px solid #00ff00;
+        background: rgba(0, 20, 0, 0.8);
+        box-shadow: 0 0 50px rgba(0, 255, 0, 0.3);
+        animation: flicker 0.15s infinite;
+      }
+
+      @keyframes flicker {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.98; }
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+        text-shadow: 0 0 10px #00ff00;
+        letter-spacing: 0.2em;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 3rem;
+        color: #00aa00;
+      }
+
+      .choices {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .choice {
+        border: 2px solid #00ff00;
+        padding: 2rem;
+        min-width: 250px;
+        background: rgba(0, 50, 0, 0.5);
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
+        color: #00ff00;
+        display: block;
+      }
+
+      .choice:hover {
+        background: rgba(0, 100, 0, 0.8);
+        box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+        transform: scale(1.05);
+      }
+
+      .choice h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        text-shadow: 0 0 5px #00ff00;
+      }
+
+      .choice p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: #00cc00;
+      }
+
+      .blink {
+        animation: blink 1s infinite;
+      }
+
+      @keyframes blink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+
+      footer {
+        position: fixed;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.8rem;
+        color: #00aa00;
+      }
+
+      @media (max-width: 640px) {
+        h1 {
+          font-size: 2rem;
+        }
+        .choice {
+          min-width: 200px;
+          padding: 1.5rem;
+        }
+        .choice h2 {
+          font-size: 1.4rem;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div class="scanline"></div>
+
+    <div class="container">
+      <h1>SERIOUS S.H.I.T.</h1>
+      <p class="subtitle">NOTHING IS HOLY</p>
+
+      <div class="choices">
+        <a href="./preview/" class="choice">
+          <h2>&gt; PREVIEW_</h2>
+          <p>Traditional portfolio layout</p>
+          <p>Clean navigation &amp; organized content</p>
+          <p style="margin-top: 1rem; font-size: 0.8rem;">[RECOMMENDED FOR MOBILE]</p>
+        </a>
+
+        <a href="./v2/" class="choice">
+          <h2>&gt; V2_OS<span class="blink">_</span></h2>
+          <p>Windows 98 experience</p>
+          <p>Interactive desktop environment</p>
+          <p style="margin-top: 1rem; font-size: 0.8rem;">[BEST ON DESKTOP]</p>
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      &gt; BUILD ONE. BREAK ONE. MAKE IT YOURS.
+    </footer>
   </body>
 </html>
