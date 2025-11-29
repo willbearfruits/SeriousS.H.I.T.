@@ -44,6 +44,11 @@ jobs:
             echo "Building Preview"
           fi
 
+      - name: Save build artifacts
+        run: |
+          mkdir -p /tmp/deploy-build
+          cp -r dist /tmp/deploy-build/
+
       - name: Checkout gh-pages branch
         run: |
           git config user.name "GitHub Actions"
@@ -59,11 +64,7 @@ jobs:
           rm -rf $FOLDER
 
           # Copy new build
-          git checkout ${{ github.ref_name }} -- dist
-          mv dist $FOLDER
-
-          # Clean up
-          git checkout gh-pages
+          cp -r /tmp/deploy-build/dist $FOLDER
 
       - name: Commit and push changes
         run: |
