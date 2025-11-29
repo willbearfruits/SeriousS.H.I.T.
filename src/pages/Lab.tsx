@@ -1,10 +1,9 @@
 import React from 'react';
-import Layout from '../components/Layout';
 import { labs } from '../data/content';
 
 const Lab: React.FC = () => {
   return (
-    <Layout>
+    <>
       <h1 className="text-5xl md:text-7xl font-black mb-12 text-stroke-red text-transparent bg-clip-text bg-white glitch-text" data-text="OPEN SOURCE LAB">
         OPEN SOURCE LAB
       </h1>
@@ -52,7 +51,7 @@ const Lab: React.FC = () => {
             </div>
         ))}
       </div>
-    </Layout>
+    </>
   );
 };
 

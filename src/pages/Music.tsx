@@ -1,10 +1,9 @@
 import React from 'react';
-import Layout from '../components/Layout';
 import { music } from '../data/content';
 
 const Music: React.FC = () => {
   return (
-    <Layout>
+    <>
       <h1 className="text-5xl md:text-6xl font-black mb-12 text-stroke-red text-transparent bg-clip-text bg-white glitch-text" data-text="AUDIO">
         AUDIO
       </h1>
@@ -38,7 +37,7 @@ const Music: React.FC = () => {
             </div>
         ))}
       </div>
-    </Layout>
+    </>
   );
 };
 

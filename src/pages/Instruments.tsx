@@ -1,11 +1,10 @@
 import React from 'react';
-import Layout from '../components/Layout';
 import { Link } from 'react-router-dom';
 import { instruments } from '../data/content';
 
 const Instruments: React.FC = () => {
   return (
-    <Layout>
+    <>
       <h1 className="text-5xl md:text-6xl font-black mb-12 text-stroke-red text-transparent bg-clip-text bg-white glitch-text" data-text="INSTRUMENTS">
         INSTRUMENTS
       </h1>
@@ -37,7 +36,7 @@ const Instruments: React.FC = () => {
             </Link>
         ))}
       </div>
-    </Layout>
+    </>
   );
 };
 

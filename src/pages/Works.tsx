@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Layout from '../components/Layout';
 import { Link } from 'react-router-dom';
 import { works, collaborations } from '../data/content';
 
@@ -17,7 +16,7 @@ const Works: React.FC = () => {
     : combinedWorks.filter(w => w.type === filter || (filter === 'Collaboration' && 'role' in w));
 
   return (
-    <Layout>
+    <>
       <h1 className="text-5xl md:text-7xl font-black mb-8 text-stroke-red text-transparent bg-clip-text bg-white glitch-text" data-text="WORKS ARCHIVE">
         WORKS ARCHIVE
       </h1>
@@ -69,7 +68,7 @@ const Works: React.FC = () => {
             </Link>
         ))}
       </div>
-    </Layout>
+    </>
   );
 };
 

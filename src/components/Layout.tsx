@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, Outlet } from 'react-router-dom';
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC = () => {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -79,7 +75,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </header>
 
       <main className="flex-grow pt-32 px-4 relative z-10">
-        {children}
+        <Outlet />
       </main>
 
       <footer className="border-t border-neon-red/30 bg-void p-12 text-center relative z-10 mt-20">
@@ -89,11 +85,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div>OPEN SOURCE INSTRUMENTS, NOISE, AND ART</div>
         </div>
         <div className="flex justify-center gap-6 mt-6 text-gray-500 text-sm">
-            <a href="https://github.com/willbearfruits" target="_blank" className="hover:text-neon-red hover:animate-shake">GITHUB</a>
-            <a href="https://www.youtube.com/dogme666" target="_blank" className="hover:text-neon-red hover:animate-shake">YOUTUBE</a>
-            <a href="https://www.instagram.com/wilbear_fruits/" target="_blank" className="hover:text-neon-red hover:animate-shake">INSTAGRAM (ART)</a>
-            <a href="https://www.instagram.com/shitisizers/" target="_blank" className="hover:text-neon-red hover:animate-shake">INSTAGRAM (GEAR)</a>
-            <a href="https://facebook.com/yaniv.schonfeld" target="_blank" className="hover:text-neon-red hover:animate-shake">FACEBOOK</a>
+            <a href="https://github.com/willbearfruits" target="_blank" rel="noreferrer" className="hover:text-neon-red hover:animate-shake">GITHUB</a>
+            <a href="https://www.youtube.com/dogme666" target="_blank" rel="noreferrer" className="hover:text-neon-red hover:animate-shake">YOUTUBE</a>
+            <a href="https://www.instagram.com/wilbear_fruits/" target="_blank" rel="noreferrer" className="hover:text-neon-red hover:animate-shake">INSTAGRAM (ART)</a>
+            <a href="https://www.instagram.com/shitisizers/" target="_blank" rel="noreferrer" className="hover:text-neon-red hover:animate-shake">INSTAGRAM (GEAR)</a>
+            <a href="https://facebook.com/yaniv.schonfeld" target="_blank" rel="noreferrer" className="hover:text-neon-red hover:animate-shake">FACEBOOK</a>
         </div>
       </footer>
     </div>

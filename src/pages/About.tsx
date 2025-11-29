@@ -1,9 +1,8 @@
 import React from 'react';
-import Layout from '../components/Layout';
 
 const About: React.FC = () => {
   return (
-    <Layout>
+    <>
       <div className="max-w-3xl mx-auto py-12">
         <h1 className="text-6xl font-black mb-12 text-neon-red tracking-tighter">MANIFESTO</h1>
         
@@ -40,7 +39,7 @@ const About: React.FC = () => {
           </p>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 

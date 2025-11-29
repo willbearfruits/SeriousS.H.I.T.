@@ -1,9 +1,8 @@
 import React from 'react';
-import Layout from '../components/Layout';
 
 const Contact: React.FC = () => {
   return (
-    <Layout>
+    <>
       <div className="max-w-3xl mx-auto">
         <h1 className="text-5xl font-black mb-12 text-center glitch-text" data-text="TRANSMISSION">TRANSMISSION</h1>
         
@@ -67,7 +66,7 @@ const Contact: React.FC = () => {
             </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 

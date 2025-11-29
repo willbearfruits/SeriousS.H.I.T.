@@ -1,5 +1,4 @@
 import React from 'react';
-import Layout from '../components/Layout';
 import AcronymGenerator from '../components/AcronymGenerator';
 import KonamiCode from '../components/KonamiCode';
 import { Link } from 'react-router-dom';
@@ -7,7 +6,7 @@ import { instruments } from '../data/content';
 
 const Home: React.FC = () => {
   return (
-    <Layout>
+    <>
       <KonamiCode />
       
       {/* Hero Section */}
@@ -84,7 +83,7 @@ const Home: React.FC = () => {
           <AcronymGenerator />
       </div>
 
-    </Layout>
+    </>
   );
 };
 

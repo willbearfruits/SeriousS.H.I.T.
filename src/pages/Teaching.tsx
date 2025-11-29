@@ -1,9 +1,8 @@
 import React from 'react';
-import Layout from '../components/Layout';
 
 const Teaching: React.FC = () => {
   return (
-    <Layout>
+    <>
       <h1 className="text-5xl md:text-6xl font-black mb-12 text-stroke-red text-transparent bg-clip-text bg-white glitch-text" data-text="INSTRUCTION">
         INSTRUCTION
       </h1>
@@ -38,7 +37,7 @@ const Teaching: React.FC = () => {
             <button className="btn-obscene w-full">VIEW SYLLABUS</button>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 

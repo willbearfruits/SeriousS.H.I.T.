@@ -1,5 +1,4 @@
 import React from 'react';
-import Layout from '../components/Layout';
 import { useParams, Link } from 'react-router-dom';
 import { instruments } from '../data/content';
 
@@ -7,10 +6,10 @@ const InstrumentDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const inst = instruments.find((i: { id: string }) => i.id === id);
 
-  if (!inst) return <Layout><div className="text-center pt-20">DEVICE NOT FOUND</div></Layout>;
+  if (!inst) return <><div className="text-center pt-20">DEVICE NOT FOUND</div></>;
 
   return (
-    <Layout>
+    <>
       <div className="max-w-6xl mx-auto">
         <Link to="/instruments" className="inline-block mb-8 text-neon-red font-mono hover:underline">&lt; BACK TO ARMORY</Link>
 
@@ -83,7 +82,7 @@ const InstrumentDetail: React.FC = () => {
             </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 
