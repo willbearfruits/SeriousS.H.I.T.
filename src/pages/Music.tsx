@@ -14,11 +14,13 @@ const Music: React.FC = () => {
                 <div className={`border border-gray-800 p-2 bg-black ${index % 2 !== 0 ? 'md:order-2' : ''}`}>
                     {album.video ? (
                         <div className="aspect-square w-full bg-black border border-gray-900 relative">
-                             <iframe 
-                                src={album.video} 
+                             <iframe
+                                src={album.video}
                                 className="w-full h-full"
                                 allowFullScreen
                                 title={album.title}
+                                sandbox="allow-scripts allow-same-origin allow-presentation"
+                                referrerPolicy="no-referrer"
                             ></iframe>
                         </div>
                     ) : (

@@ -24,11 +24,13 @@ const WorkDetail: React.FC = () => {
 
         {work.video ? (
             <div className="aspect-video w-full bg-black border border-gray-800 mb-12">
-                <iframe 
-                    src={work.video} 
+                <iframe
+                    src={work.video}
                     className="w-full h-full"
                     allowFullScreen
                     title={work.title}
+                    sandbox="allow-scripts allow-same-origin allow-presentation"
+                    referrerPolicy="no-referrer"
                 ></iframe>
             </div>
         ) : work.image ? (

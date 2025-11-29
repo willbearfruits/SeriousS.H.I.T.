@@ -28,11 +28,13 @@ const InstrumentDetail: React.FC = () => {
                 {inst.video && (
                     <div className="border border-gray-800 bg-black p-2">
                         <div className="aspect-video w-full bg-black relative overflow-hidden">
-                            <iframe 
-                                src={inst.video} 
+                            <iframe
+                                src={inst.video}
                                 className="w-full h-full"
                                 allowFullScreen
                                 title="Demo"
+                                sandbox="allow-scripts allow-same-origin allow-presentation"
+                                referrerPolicy="no-referrer"
                             ></iframe>
                         </div>
                     </div>

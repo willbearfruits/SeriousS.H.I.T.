@@ -85,10 +85,12 @@ const Desktop: React.FC = () => {
             
             {win.type === 'DOOM' && (
                 <div className="w-full h-full bg-black flex flex-col items-center justify-center overflow-hidden">
-                    <iframe 
+                    <iframe
                         src="https://dos.zone/player/?bundleUrl=https%3A%2F%2Fcdn.dos.zone%2Foriginal%2F2%2Fdoom-1993.jsdos?anonymous=1"
                         className="w-full h-full border-none"
                         title="DOOM"
+                        sandbox="allow-scripts allow-same-origin"
+                        referrerPolicy="no-referrer"
                     />
                 </div>
             )}
